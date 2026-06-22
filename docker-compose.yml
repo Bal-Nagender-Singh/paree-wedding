@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: paree-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: paree
+    ports:
+      - "5432:5432"
+    volumes:
+      - paree_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  paree_postgres_data:

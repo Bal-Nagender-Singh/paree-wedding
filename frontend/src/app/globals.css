@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #063C21;
+  --color-brand-green-hover: #0d4a2c;
+  --color-brand-green-light: #0f3823;
+  --color-brand-gold: #c5a880;
+  --color-brand-gold-hover: #b8955f;
+  --color-brand-gold-light: #e6dfd5;
+  --color-brand-beige: #FAF8F5;
+  --color-brand-cream: #F4EFEB;
+  --color-brand-crimson: #58111A;
+  --color-brand-crimson-hover: #450c12;
+  
+  --font-serif-cinzel: 'Cinzel', serif;
+  --font-serif-cormorant: 'Cormorant Garamond', serif;
+  --font-sans-montserrat: 'Montserrat', sans-serif;
+}
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #1A1A1A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom premium scrollbar for high-end feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8955f;
+}
+
+/* Base styles for premium UI elements */
+.luxury-overlay {
+  background: linear-gradient(to top, rgba(6, 60, 33, 0.95) 0%, rgba(6, 60, 33, 0.4) 60%, rgba(6, 60, 33, 0.1) 100%);
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #c5a880 0%, #e6dfd5 50%, #c5a880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-border {
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.premium-border-hover:hover {
+  border: 1px solid rgba(197, 168, 128, 0.8);
+}
+
+/* Image zoom styling */
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+.image-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.image-zoom-container:hover img {
+  transform: scale(1.08);
+}
+
+/* News ticker marquee for announcement bar */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: ticker-scroll 75s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+.ticker-track-fast {
+  animation-duration: 90s;
+}
+.ticker-track-slow {
+  animation-duration: 120s;
+}
